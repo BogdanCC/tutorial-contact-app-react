@@ -16,17 +16,24 @@ export default class Test extends Component {
     render() {
         console.log('component render()');
         return (
-            this.state.loading ? 
-                <div style={{height: '300px', width: '300px', margin: '300px auto 0 auto'}}>
-                    <img src={loading} className="img-fluid" alt="loading" />  
-                </div>
-                :
-                this.state.posts.map(post => (
-                <div key={post.id}>
-                    <h1 className="display-2">{post.name}</h1>
-                    <h1 className="display-5">{post.email}</h1>
-                    <p className="lead">{post.body}</p>
-                </div>))     
+            <div>
+                <h2 className="mb-4 pt-4 pb-4">Just a testing component <i className="fas fa-wrench"></i></h2>
+                {this.state.loading ? 
+                    <div id="loading-div" style={{marginTop: `${window.innerHeight / 2 - 100}px`}}>
+                        <img src={loading} className="img-fluid" alt="loading" />  
+                    </div>
+                    :
+                    this.state.posts.map(post => (
+                    <div key={post.id} className="card mb-4">
+                        <div className="card-header">Quote</div>
+                        <div className="card-body">
+                        <blockquote className="blockquote">
+                            <p>{post.body}</p>
+                            <footer className="blockquote-footer">{post.email}</footer>
+                        </blockquote>
+                        </div>
+                    </div>))}
+            </div>
         )          
     }
 }

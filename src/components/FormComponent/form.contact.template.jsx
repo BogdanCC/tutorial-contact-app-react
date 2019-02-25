@@ -8,8 +8,8 @@ const ContactFormTemplate = props => {
         <Consumer>{value => {
             const { dispatch } = value;
             return (
-                <div className="card mb-3">
-                    <div className="card-header">Add Contact</div>
+                <div className="card mb-3 mt-4">
+                    <h4 className="card-header">Add Contact</h4>
                     <div className="card-body">
                         <form onSubmit={e => handleSubmit(e, dispatch)}>
                             <FormInput 
@@ -34,7 +34,7 @@ const ContactFormTemplate = props => {
                                 placeholder="Enter phone..."
                                 onChange={handleChange}
                                 error={errors.phone} />
-                            <input type="submit" value="Add Contact" className="btn btn-block btn-danger" />
+                            <input type="submit" value="Add Contact" className="btn btn-block btn-outline-primary" />
                         </form>
                     </div>
                 </div>

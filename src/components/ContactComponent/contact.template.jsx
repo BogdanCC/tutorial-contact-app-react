@@ -26,13 +26,13 @@ class ContactTemplate extends Component {
                 {value => {
                     const { dispatch } = value;
                     return (
-                        <div className="card card-body mb-3">
-                            <h4>{name + ' '} 
+                        <div className="card border-primary mb-3">
+                            <h4 className="card-header pb-3 pt-3">{name + ' '} 
                                 <i onClick={() => this.onExpandClick()} className="fa fa-sort-down"></i>
                                 <i className="fas fa-times" onClick={() => this.onDeleteClick(id, dispatch)}></i>
                                 <Link to={`contact/edit/${id}`} >
                                     <i 
-                                        className="fas fa-pencil-alt"
+                                        className="fa fa-edit text-warning"
                                         style={{
                                             cursor: 'pointer',
                                             float: 'right',
@@ -43,10 +43,10 @@ class ContactTemplate extends Component {
                                 </Link>
                             </h4>
                             { showContactInfo ? (
-                                <ul className="list-group">
-                                    <li className="list-group-item">{email}</li>
-                                    <li className="list-group-item">{phone}</li>
-                                </ul> 
+                                <div className="card-body">
+                                    <h5 className="card-title pb-2 pt-2">{email}</h5>
+                                    <p className="card-text lead pb-2 pt-2">{phone}</p>
+                                </div> 
                                 ) : null
                             }
                         </div>

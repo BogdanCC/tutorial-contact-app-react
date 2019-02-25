@@ -5,7 +5,7 @@ export default class About extends Component {
     return (
       <div>
         <h1 className="display-4">About Contact Manager</h1>
-        <p className="lead">Simple app to manage contact</p>
+        <p className="lead s">Simple app to manage contact. Just a learning project.</p>
         <p className="text-secondary">Version 1.0.0</p>
       </div>
     )

@@ -11,6 +11,7 @@ import Test from './components/test/test.component';
 import Provider from './context';
 /** CSS Styles */
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 import './App.css';
 
 class App extends Component {
